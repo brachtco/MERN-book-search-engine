@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const graphql = require('graphql')
 
 // set token secret and expiration date
 const secret = 'mysecretsshhhhh';
@@ -10,6 +11,8 @@ module.exports = {
     // allows token to be sent via  req.query or headers
     let token = req.query.token || req.headers.authorization;
 
+    app.use(graphql)
+    
     // ["Bearer", "<tokenvalue>"]
     if (req.headers.authorization) {
       token = token.split(' ').pop().trim();
