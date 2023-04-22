@@ -68,7 +68,10 @@ const SearchBooks = () => {
     }
 
     try {
-      const response = await saveBook(bookToSave, token);
+      console.log({ bookToSave, token });
+      const response = await saveBook({
+        variables: { bookData: bookToSave, token },
+      });
 
       if (!response.ok) {
         throw new Error("something went wrong!");
@@ -81,8 +84,6 @@ const SearchBooks = () => {
     }
   };
 
-  console.log({ searchedBooks });
-
   return (
     <>
       <div className="text-light bg-dark p-5">
@@ -90,7 +91,12 @@ const SearchBooks = () => {
           <h1>Search for Books!</h1>
           <Form onSubmit={handleFormSubmit}>
             <Row>
-              <Col xs={12} md={8}></Col>
+              <Col xs={12} md={8}>
+                <input
+                  value={searchInput}
+                  onChange={({ target: t }) => setSearchInput(t.value)}
+                />
+              </Col>
               <Col xs={12} md={4}>
                 <Button type="submit" variant="success" size="lg">
                   Submit Search
