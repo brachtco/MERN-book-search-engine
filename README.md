@@ -48,4 +48,4 @@ https://opensource.org/license/mit/
 
 Deployed Link: 
 
-GitHub Repo:
+GitHub Repo: https://github.com/brachtco/MERN-book-search-engine
