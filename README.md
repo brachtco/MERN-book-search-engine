@@ -11,12 +11,12 @@ those books. They call also remove any saved books.
 
 npm  
 apollo client  
-bootstrap
-graphql
-jwt-decode
-react
-apollo-server-express
-brcrypt
-express
-mongoode
-nodemon
+bootstrap  
+graphql  
+jwt-decode  
+react  
+apollo-server-express  
+brcrypt  
+express  
+mongoose   
+nodemon  
